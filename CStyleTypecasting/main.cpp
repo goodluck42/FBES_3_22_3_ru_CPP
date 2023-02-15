@@ -30,7 +30,7 @@ int main()
 
 	///////////////////////////////////////
 	// LITERALS
-	
+
 	//const char* s = "Hello C++"; // string literal
 	//char x = '@';
 	//short s = 40; // no literal
@@ -45,7 +45,7 @@ int main()
 
 	// IMPLICIT - неявное
 	// EXPLICIT - явное
-	
+
 	// imlicit conversions
 	//short a = 20; // int to short
 	//int b = 20.2; // double to int
