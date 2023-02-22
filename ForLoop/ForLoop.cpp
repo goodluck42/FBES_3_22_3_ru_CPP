@@ -118,4 +118,25 @@ loop_label:
 	std::cout << b << '\n';
 
 	auto x = 42UL;*/
+
+
+	const int w = 5;
+	const int h = 5;
+
+	for (int i = 0; i < w; ++i)
+	{
+		for (int j = 0; j < h; ++j)
+		{
+			if (i == 2 && j == 2)
+			{
+				std::cout << "  ";
+
+				continue;
+			}
+
+			std::cout << "* ";
+		}
+
+		std::cout << '\n';
+	}
 }
