@@ -120,7 +120,7 @@ loop_label:
 	auto x = 42UL;*/
 
 
-	const int w = 5;
+	/*const int w = 5;
 	const int h = 5;
 
 	for (int i = 0; i < w; ++i)
@@ -138,5 +138,11 @@ loop_label:
 		}
 
 		std::cout << '\n';
+	}*/
+
+
+	for (size_t i = 5; i-- > 0;)
+	{
+		std::cout << i << '\n';
 	}
 }
