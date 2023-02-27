@@ -64,21 +64,42 @@ int main()
 		}
 	}*/
 
+	//{
+	//	const int rows = 3;
+	//	const int cols = 3;
+
+	//	int arr[rows][cols]
+	//	{
+	//		 // 0   1   2
+	//		   {10, 42, 12}, // 0
+	//		   {99, 13, 15}, // 1
+	//		   {90, 44, 51}  // 2
+	//	};
+
+	//	for (int i = 0; i < rows * cols; ++i)
+	//	{
+	//		std::cout << arr[0][i] << '\n';
+	//	}
+	//}
+
 	{
-		const int rows = 3;
-		const int cols = 3;
+		srand(time(nullptr));
+		int md_arr[3][3];
 
-		int arr[rows][cols]
+		for (int i = 0; i < 3; ++i)
 		{
-			 // 0   1   2
-			   {10, 42, 12}, // 0
-			   {99, 13, 15}, // 1
-			   {90, 44, 51}  // 2
-		};
+			for (int j = 0; j < 3; ++j)
+			{
+				md_arr[i][j] = rand() % 100;
+			}
+		}
 
-		for (int i = 0; i < rows * cols; ++i)
+		for (int i = 0; i < 3; ++i)
 		{
-			std::cout << arr[0][i] << '\n';
+			for (int j = 0; j < 3; ++j)
+			{
+				std::cout << md_arr[i][j] << '\n';
+			}
 		}
 	}
 }
