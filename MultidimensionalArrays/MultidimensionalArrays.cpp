@@ -102,4 +102,40 @@ int main()
 			}
 		}
 	}
+
+	{
+		int a = 10;
+		int b = 20;
+
+
+		int c = a;
+
+		a = b;
+		b = c;
+
+		std::cout << "a = " << a << '\n'; // 20
+		std::cout << "b = " << b << '\n'; // 10
+	}
+
+	{
+		//          a   b
+		int arr[3]{ 10, 20, 15 };
+
+
+		int c = arr[0];
+
+		arr[0] = arr[1];
+		arr[1] = c;
+
+		std::cout << arr[0] << '\n'; // 20
+		std::cout << arr[1] << '\n'; // 10
+		std::cout << arr[2] << '\n'; // 15
+
+		int a = 10;
+		int b = 90;
+
+		a, b = b, a;
+
+
+	}
 }
