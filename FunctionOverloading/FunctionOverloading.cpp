@@ -67,8 +67,9 @@ void baz()
 }
 
 
-// std::uniform_int_distribution<long>
-// std::uniform_real_distribution<double>;
+std::uniform_int_distribution<long> range(1L, 100L);
+std::uniform_int_distribution<short> range2(1, 100);
+std::uniform_real_distribution<double> range3(1.1, 10.5);
 
 void generate_random_values(long arr[][3], int rows, const int cols = 3);
 void generate_random_values(double arr[][3], int rows, const int cols = 3);
@@ -115,9 +116,9 @@ int main()
 
 
 	int arr4[rows][cols]{
-		{20, 11, 30},
-		{42, 15, 22},
-		{12, 15, 13},
+		{20, 11, 30}, // 11 20 30
+		{42, 15, 22}, // 15 22 42
+		{12, 15, 13}, // 12 13 15
 	};
 
 	print_array(arr4, rows, cols);
@@ -161,10 +162,12 @@ void print_array(double arr[], int len)
 void print_array(int arr[][3], int rows, const int cols)
 {
 	std::cout << "{\n";
+
 	for (int i = 0; i < rows; ++i)
 	{
 		std::cout << "    ";
 		print_array(arr[i], cols);
 	}
+
 	std::cout << "}" << '\n';
 }
