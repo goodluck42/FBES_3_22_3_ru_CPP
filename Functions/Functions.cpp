@@ -23,6 +23,8 @@ void print_rect(const int width = 6, const int height = 5)
 }
 
 
+
+
 NumberType get_number_type(int number)
 {
 	if (number > 0)
@@ -37,7 +39,6 @@ NumberType get_number_type(int number)
 
 	return NumberType::ZERO;
 }
-
 
 void print_array(int arr[], int len)
 {
@@ -56,9 +57,26 @@ void print_array(int arr[], int len)
 	std::cout << " }" << '\n';
 }
 
+void do_some_work(int a, int b)
+{
+	std::cout << a + b << '\n';
+}
+
+double sum_double(double a, double b)
+{
+	return a + b;
+}
+
 int main()
 {
-	const int arr_len = 5;
+
+	do_some_work(20.5, 10.9);
+
+	auto result = sum_double(20.5, 10.9);
+
+	std::cout << result;
+
+	/*const int arr_len = 5;
 
 	int arr[arr_len]{ 20, 42, 13, 15, 20 };
 
@@ -68,8 +86,7 @@ int main()
 
 	int arr2[arr2_len]{ 88, 13, 42, 10, 25, 77, 19, 90, 17, 89 };
 
-	print_array(arr2, arr2_len);
-
+	print_array(arr2, arr2_len);*/
 
 	/*{
 		int w;
