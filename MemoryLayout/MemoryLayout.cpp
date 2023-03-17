@@ -1,5 +1,41 @@
 #include <iostream>
 
+float avg(int a, int b)
+{
+	return (a + b) / 2;
+}
+
+
+void task1()
+{
+	int a;
+	int b;
+
+	std::cin >> a;
+
+	std::cin >> b;
+
+	std::cout << "result = " << avg(a, b) << '\n';
+}
+
+int sum(int a, int b)
+{
+	return a + b;
+}
+
+void task2()
+{
+	int a;
+	int b;
+
+	std::cin >> a;
+	std::cin >> b;
+
+	std::cout << "result = " << sum(a, b) << '\n';
+
+}
+
+
 int value = 42;
 int global; // 0
 int* ptr; // nullptr
@@ -18,10 +54,13 @@ void foo()
 
 int main(int argc, char* argv[])
 {
-	for (int i = 0; i < 10; ++i)
+	task1();
+	task2();
+
+	/*for (int i = 0; i < 10; ++i)
 	{
 		foo();
-	}
+	}*/
 
 	/*for (int i = 0; i < 3; ++i)
 	{
