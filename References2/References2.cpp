@@ -23,9 +23,9 @@ void append(T*& arr, size_t& len, T value)
 	arr = new_arr;
 }
 
-void print(int* arr, int len)
+void print(int* arr, size_t len)
 {
-	for (int i = 0; i < len; ++i)
+	for (size_t i = 0; i < len; ++i)
 	{
 		std::cout << arr[i] << ' ';
 	}
@@ -36,18 +36,20 @@ void print(int* arr, int len)
 int main()
 {
 	size_t len = 4;
-	int* arr = new int[len];
+	int* arr = new int[5];
+	
+	//std::cout << arr;
+	//
+	//// int*& ptr_ref = arr;
 
-	// int*& ptr_ref = arr;
+	//arr[0] = 10;
+	//arr[1] = 20;
+	//arr[2] = 30;
+	//arr[3] = 42;
 
-	arr[0] = 10;
-	arr[1] = 20;
-	arr[2] = 30;
-	arr[3] = 42;
-
-	print(arr, len);
-	append(arr, len, 90);
-	print(arr, len);
+	//print(arr, len);
+	//append(arr, len, 90);
+	//print(arr, len);
 	delete[] arr;
 
 
