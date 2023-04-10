@@ -46,7 +46,7 @@ void random(int* arr, size_t len)
 
 int main()
 {
-	/* {
+	{
 		size_t rows = 3;
 		size_t cols = 2;
 
@@ -81,7 +81,7 @@ int main()
 		}
 
 		delete[] matrix;
-	}*/
+	}
 
 
 	/* {
