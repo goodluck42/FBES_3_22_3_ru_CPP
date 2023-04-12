@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 namespace MSSql
 {
 	void connect()
@@ -27,6 +26,8 @@ namespace MySql
 	}
 }
 
+
+
 namespace MySql
 {
 	void insert()
@@ -47,20 +48,27 @@ int a = 42;
 
 void foo()
 {
-	std::cout << "Foo!" << '\n';
+	std::cout << "foo";
+}
+template<typename T> void foo()
+{
+	std::cout << "foo<T>";
 }
 
 int main()
 {
-	int a = 13;
+
+	foo<int>();
+
+	/*int a = 13;
 	int foo = 90;
 
 	std::cout << ::a + a<< '\n';
 	std::cout << foo << '\n';
-	::foo();
+	::foo();*/
 
 
-	MySql::
+	
 	/* {
 		size_t len = 4;
 
