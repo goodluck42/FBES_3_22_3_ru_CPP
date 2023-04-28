@@ -1,136 +1,128 @@
 #include <iostream>
 
-struct CPU
+struct A // 12
 {
-    double frequency;
-    int cores; // physical cores
+	long a; // 4 of 4 *
+	long c; // 4 of 4 *
+	char b; // 1 of 4 * (3)
+	char d; // 2 of 4 + (2)
 };
 
-struct GPU
+struct Obj
 {
-    int VRAM;
-    int bus;
-    double clock;
+	long a;
+	long b;
+	long c;
 };
 
-enum class RAMType
+struct B
 {
-    DDR4,
-    DDR5,
+	short b; // 2 of 8 *
+	short c; // 4 of 8 +
+	long a; // 8 of 8 +
+	long long d; // 8 of 8 *
 };
 
-struct RAM
+struct C
 {
-    double frequency;
-    int capacity;
-    RAMType type;
+	short a; // 2 of 8 *
+	long b; // 6 of 8 +
+	short c; // 8 of 8 +
+	long long x; // 8 of 8 *
 };
 
-struct Computer
+// * - memory allocation
+struct D
 {
-    CPU cpu;
-    GPU gpu;
-    RAM ram;
+	long a; // 4 *
+	// char c[13]; // 12
+	char _1; // 1 of 4 *
+	char _2; // 2 of 4
+	char _3; // 3 of 4
+	char _4; // 4 of 4
+	char _5; // 1 of 4 *
+	char _6; // 2 of 4
+	char _7; // 3 of 4
+	char _8; // 4 of 4
+	char _9; // 1 of 4 *
+	char _10; // 2 of 4
+	char _11; // 3 of 4 
+	char _12; // 4 of 4
+	char _13; // 1 of 4 *
 };
 
-struct PC // 20 bytes
+
+struct F
 {
-    char* cpu{};
-    char* gpu{};
-    int ram{};
+	long a; // 4 of 4 *
+	char x[7]; // 4 of 4 * || 3 of 4 *
+	short b; // 2 of 4 *
+	char c; // 3 of 4 +
 };
 
-struct PC2 // 68 bytes
+struct G
 {
-    char cpu[32]{};
-    char gpu[32]{};
-    int ram{};
+	double x; // 8 of 8 *
+	short a;  // 2 of 8 *
+	long b; // 
 };
 
-void fill_PC(PC2* computer, const char* cpu, const char* gpu, int ram)
+
+struct Inner
 {
-    strcpy_s(computer->cpu, 32, cpu);
-    strcpy_s(computer->gpu, 32, gpu);
-    computer->ram = ram;
-}
-
-void fill_PC(PC* computer, const char* cpu, const char* gpu, int ram)
-{
-    computer->cpu = new char[32] {};
-
-    strcpy_s(computer->cpu, 32, cpu);
-
-    computer->gpu = new char[32] {};
-
-    strcpy_s(computer->gpu, 32, gpu);
-
-    computer->ram = ram;
-}
-
-void free_PC(PC* computers, size_t count)
-{
-    for (size_t i = 0; i < count; ++i)
-    {
-        delete[] computers[i].cpu;
-        delete[] computers[i].gpu;
-    }
-
-    delete[] computers;
-}
-
-void print_PCs(PC* computers, size_t count)
-{
-    for (size_t i = 0; i < count; ++i)
-    {
-        std::cout << "#" << i + 1 << ":\n";
-        std::cout << "cpu = " << computers[i].cpu << '\n';
-        std::cout << "gpu = " << computers[i].gpu << '\n';
-        std::cout << "ram = " << computers[i].ram << '\n';
-    }
-}
-
-struct Object
-{
-    void* data;
-    int size;
+	double x1; // 8 of 8
+	short x2; // 2 of 8
 };
 
-struct Image
+struct H
 {
-    void* data;
-    int image_size;
+	long a; // 4 of 8 *
+	Inner obj; // 16 of 16 *
+	short b; // 2 of 8*
+	char c; // 3 of 8+
 };
 
-struct Main
+struct Effect {};
+
+struct Particle
 {
-    Object obj;
-    Image cat;
+	long x; // 4 of 8*
+	long y; // 8 of 8+
+	Effect* effect; // 8 of 8*
 };
 
-int main()
+class Class
 {
-    //{
-    //    // CRUD
-    //// CREATE
-    //// READ
-    //// UPDATE
-    //// DELETE
-    //    PC* computers = new PC[3]; // 60 + (64 * 3) = 252
+private:
+	int a;
 
-    //    char buffer[32];
+	A()
+	{
+		
+	}
 
-    //    std::cin.getline(buffer, 32);
+	virtual void bar() = 0;
+
+	virtual void foo()
+	{
+		this->a;
+	}
+};
+
+int main(void)
+{
+	Class a;
+
+	
 
 
-    //    fill_PC(computers + 0, buffer, "Nvidia RTX 3070Ti", 16);
-    //    fill_PC(computers + 1, "Intel i7-12700", "Nvidia RTX 4070Ti", 32);
-    //    fill_PC(computers + 2, "Intel i5-10600", "Nvidia RTX 3060", 8);
+	std::cout << sizeof(Particle) * 1'000'000 / 1000 / 1000 << '\n';
 
-    //    computers[0].ram = 32;
+	/*Obj test{ 10, 20, 30 };
 
-    //    print_PCs(computers, 3);
+	long* arr = (long*)(&test);
 
-    //    free_PC(computers, 3);
-    //}
-    
+	std::cout << arr[0] << '\n';
+	std::cout << arr[1] << '\n';
+	std::cout << arr[2] << '\n';*/
 }
