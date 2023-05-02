@@ -111,11 +111,6 @@ private:
 
 int main(void)
 {
-	Class a;
-
-	
-
-
 	std::cout << sizeof(Particle) * 1'000'000 / 1000 / 1000 << '\n';
 
 	/*Obj test{ 10, 20, 30 };
